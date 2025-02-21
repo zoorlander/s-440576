@@ -9,14 +9,14 @@ const features = [
     description: "Just $20/€12 per person - save up to 70% compared to traditional payroll services.",
   },
   {
+    icon: Shield,
+    title: "Fully Compliant",
+    description: "Automatic compliance with tax laws, labor regulations, and data protection standards in 100+ countries.",
+  },
+  {
     icon: Globe,
     title: "Global Coverage",
     description: "Pay your team in their preferred currency, anywhere in the world.",
-  },
-  {
-    icon: Shield,
-    title: "Fully Compliant",
-    description: "Stay compliant with local tax laws and regulations in all jurisdictions.",
   },
   {
     icon: Clock,
@@ -34,7 +34,7 @@ export const FeaturesSection = () => {
             Global Payroll Made Simple
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Everything you need to manage your international team's payroll efficiently
+            Everything you need to manage your international team's payroll efficiently, with built-in compliance for every country
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -45,6 +45,34 @@ export const FeaturesSection = () => {
               <p className="text-gray-600">{feature.description}</p>
             </Card>
           ))}
+        </div>
+        
+        {/* Adding a compliance details section */}
+        <div className="mt-16 p-8 bg-white rounded-lg shadow-lg">
+          <h3 className="text-2xl font-bold mb-6 text-center">Comprehensive Compliance Coverage</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <Shield className="h-12 w-12 mb-4 text-emerald-500 mx-auto" />
+              <h4 className="font-semibold mb-2">Tax Compliance</h4>
+              <p className="text-gray-600">
+                Automatic tax calculations and filings for every jurisdiction, including VAT, income tax, and social contributions.
+              </p>
+            </div>
+            <div className="text-center">
+              <Shield className="h-12 w-12 mb-4 text-emerald-500 mx-auto" />
+              <h4 className="font-semibold mb-2">Labor Laws</h4>
+              <p className="text-gray-600">
+                Built-in compliance with local labor regulations, minimum wage requirements, and mandatory benefits.
+              </p>
+            </div>
+            <div className="text-center">
+              <Shield className="h-12 w-12 mb-4 text-emerald-500 mx-auto" />
+              <h4 className="font-semibold mb-2">Data Protection</h4>
+              <p className="text-gray-600">
+                GDPR, CCPA, and local data protection standards compliance for secure payroll processing.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
