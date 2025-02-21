@@ -1,27 +1,27 @@
 
-import { Check, Zap, Shield, BarChart } from "lucide-react";
+import { DollarSign, Globe, Shield, Clock } from "lucide-react";
 import { Card } from "./ui/card";
 
 const features = [
   {
-    icon: Zap,
-    title: "Lightning Fast",
-    description: "Process automation that runs at incredible speeds, saving you precious time.",
+    icon: DollarSign,
+    title: "Cost-Effective",
+    description: "Just $20/€12 per person - save up to 70% compared to traditional payroll services.",
+  },
+  {
+    icon: Globe,
+    title: "Global Coverage",
+    description: "Pay your team in their preferred currency, anywhere in the world.",
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
-    description: "Bank-grade encryption and security measures to protect your sensitive data.",
+    title: "Fully Compliant",
+    description: "Stay compliant with local tax laws and regulations in all jurisdictions.",
   },
   {
-    icon: BarChart,
-    title: "Advanced Analytics",
-    description: "Gain deep insights into your operations with our powerful analytics tools.",
-  },
-  {
-    icon: Check,
-    title: "Easy Integration",
-    description: "Seamlessly connects with your existing tools and workflows.",
+    icon: Clock,
+    title: "Quick Setup",
+    description: "Get started in minutes, not weeks. No complex paperwork required.",
   },
 ];
 
@@ -31,16 +31,16 @@ export const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Features Built for Scale
+            Global Payroll Made Simple
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Everything you need to manage and automate your business processes efficiently
+            Everything you need to manage your international team's payroll efficiently
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <Card key={index} className="p-6 hover-grow glass-card">
-              <feature.icon className="h-12 w-12 mb-4 text-violet-500" />
+              <feature.icon className="h-12 w-12 mb-4 text-emerald-500" />
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </Card>

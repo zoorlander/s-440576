@@ -3,19 +3,19 @@ import { Card } from "./ui/card";
 
 const testimonials = [
   {
-    quote: "This platform has completely transformed how we handle our business processes. The automation capabilities are incredible.",
+    quote: "Managing international payroll used to be a nightmare. Now it's just a few clicks and everyone gets paid on time, every time.",
     author: "Sarah Johnson",
-    role: "CEO at TechFlow",
+    role: "HR Director at GlobalTech",
   },
   {
-    quote: "The ease of use and powerful features make this a game-changer for our team. Customer support is exceptional.",
+    quote: "The cost savings are incredible. We're saving thousands every month compared to our previous payroll provider.",
     author: "Michael Chen",
-    role: "CTO at InnovateX",
+    role: "CFO at ScaleUp Inc",
   },
   {
-    quote: "We've seen a 40% increase in productivity since implementing this solution. It's been a fantastic investment.",
+    quote: "The compliance documentation and support have made expanding to new countries so much easier.",
     author: "Emma Davis",
-    role: "Operations Director at Scale Co",
+    role: "Operations Manager at RemoteFirst",
   },
 ];
 
@@ -24,9 +24,9 @@ export const TestimonialsSection = () => {
     <section className="py-24 px-4 bg-gray-50">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Loved by Teams</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Trusted by Global Teams</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            See what our customers have to say about their experience
+            See why companies choose us for their international payroll needs
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
