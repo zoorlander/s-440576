@@ -1,28 +1,86 @@
-
 import { ArrowRight } from "lucide-react";
 import { Button } from "./ui/button";
 
 export const HeroSection = () => {
   return (
-    <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-100/30 to-white pointer-events-none" />
-      <div className="animate-fade-up space-y-8 relative">
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl mx-auto">
-          Simple Global Payroll for Modern Businesses
+    <section className="min-h-[90vh] flex flex-col items-center justify-center text-center px-4 relative overflow-hidden">
+      {/* Golden Ratio Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-50/50 via-orange-50/30 to-yellow-50/40 pointer-events-none" />
+      
+      {/* Fibonacci Spiral Background */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <svg width="100%" height="100%" viewBox="0 0 1000 1000" className="animate-spin-slow">
+          <path 
+            d="M500,500 Q400,300 200,400 Q100,600 300,700 Q700,800 800,600 Q900,200 600,100 Q100,0 0,300 Q-200,900 400,1000" 
+            stroke="url(#goldGradient)" 
+            strokeWidth="2" 
+            fill="none"
+            className="opacity-30"
+          />
+          <defs>
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#fbbf24" />
+              <stop offset="50%" stopColor="#f59e0b" />
+              <stop offset="100%" stopColor="#d97706" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Golden Rectangle Grid */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="grid grid-cols-8 grid-rows-5 w-full h-full">
+          {Array.from({ length: 40 }).map((_, i) => (
+            <div key={i} className="border border-amber-400/20" />
+          ))}
+        </div>
+      </div>
+      
+      <div className="animate-fade-up space-y-8 relative z-10">
+        {/* Large Company Name with Gradient */}
+        <h1 className="text-6xl md:text-8xl font-bold tracking-tight bg-gradient-to-r from-amber-600 via-orange-500 to-yellow-600 bg-clip-text text-transparent mb-4">
+          Fibo
         </h1>
-        <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-          Run your global payroll with ease. Pay your team in their preferred currency,
-          stay compliant, and save money with our competitive rates.
+        
+        {/* Tagline */}
+        <p className="text-2xl md:text-3xl font-medium bg-gradient-to-r from-amber-700 to-orange-600 bg-clip-text text-transparent mb-8">
+          Mastering creativity, delivering results
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="text-lg px-8 hover-grow">
-            Start Saving Today
+        
+        {/* Description */}
+        <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+          Revolutionary AI tools that help designers create with mathematical precision 
+          and creative freedom, inspired by the golden ratio
+        </p>
+        
+        {/* CTA Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            Join Beta Testing
             <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
-          <Button size="lg" variant="outline" className="text-lg px-8 hover-grow">
-            Calculate Savings
+          <Button 
+            size="lg" 
+            variant="outline" 
+            className="text-lg px-8 border-amber-300 text-amber-700 hover:bg-amber-50 transform hover:scale-105 transition-all duration-300"
+          >
+            Get Early Access
           </Button>
         </div>
+      </div>
+
+      {/* Floating Golden Ratio Elements */}
+      <div className="absolute top-20 left-20 w-16 h-16 opacity-20 animate-float">
+        <div className="w-full h-full bg-gradient-to-br from-amber-400 to-orange-400 transform rotate-45"></div>
+      </div>
+      <div className="absolute bottom-32 right-20 w-12 h-12 opacity-20 animate-float-delayed">
+        <div className="w-full h-full bg-gradient-to-br from-yellow-400 to-amber-400 rounded-full"></div>
+      </div>
+      <div className="absolute top-1/3 right-1/4 w-8 h-8 opacity-20 animate-pulse">
+        <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-400 transform rotate-12"></div>
       </div>
     </section>
   );

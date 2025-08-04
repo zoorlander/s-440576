@@ -1,75 +1,118 @@
-
-import { DollarSign, Globe, Shield, Clock } from "lucide-react";
+import { Palette, Layout, Zap, Brain, Sparkles } from "lucide-react";
 import { Card } from "./ui/card";
 
-const features = [
+const products = [
   {
-    icon: DollarSign,
-    title: "Cost-Effective",
-    description: "Just $20/€12 per person - save up to 70% compared to traditional payroll services.",
+    icon: Brain,
+    title: "AI Design Assistant",
+    description: "Intelligent companion for layout creation and design decisions based on golden ratio principles.",
   },
   {
-    icon: Shield,
-    title: "Fully Compliant",
-    description: "Automatic compliance with tax laws, labor regulations, and data protection standards in 100+ countries.",
+    icon: Palette,
+    title: "Smart Color Harmony",
+    description: "AI-powered color palette generator using psychology, trends, and mathematical color theory.",
   },
   {
-    icon: Globe,
-    title: "Global Coverage",
-    description: "Pay your team in their preferred currency, anywhere in the world.",
+    icon: Layout,
+    title: "Layout Intelligence",
+    description: "Machine learning-driven composition optimization following natural proportions.",
   },
   {
-    icon: Clock,
-    title: "Quick Setup",
-    description: "Get started in minutes, not weeks. No complex paperwork required.",
+    icon: Sparkles,
+    title: "Brand DNA AI",
+    description: "Automated brand identity creation from simple briefs using mathematical design principles.",
+  },
+  {
+    icon: Zap,
+    title: "Design Critique Bot",
+    description: "AI feedback system providing professional design improvements and suggestions.",
   },
 ];
 
 export const FeaturesSection = () => {
   return (
-    <section className="py-24 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-24 px-4 bg-gradient-to-b from-amber-50/30 to-orange-50/20 relative">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="grid grid-cols-12 grid-rows-8 w-full h-full">
+          {Array.from({ length: 96 }).map((_, i) => (
+            <div key={i} className="border border-amber-300/30" />
+          ))}
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative">
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Global Payroll Made Simple
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-amber-700 via-orange-600 to-yellow-600 bg-clip-text text-transparent">
+            Our AI Products
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Everything you need to manage your international team's payroll efficiently, with built-in compliance for every country
+          <p className="text-gray-700 max-w-3xl mx-auto text-lg leading-relaxed">
+            Cutting-edge artificial intelligence tools designed with mathematical precision 
+            to enhance creativity and streamline the design process
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <Card key={index} className="p-6 hover-grow glass-card">
-              <feature.icon className="h-12 w-12 mb-4 text-emerald-500" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {products.map((product, index) => (
+            <Card 
+              key={index} 
+              className="group p-8 hover:shadow-2xl transition-all duration-500 bg-white/80 backdrop-blur-sm border-amber-200/50 hover:border-amber-300 transform hover:-translate-y-2"
+            >
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <product.icon className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-gray-800 group-hover:text-amber-700 transition-colors">
+                {product.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {product.description}
+              </p>
             </Card>
           ))}
         </div>
-        
-        {/* Adding a compliance details section */}
-        <div className="mt-16 p-8 bg-white rounded-lg shadow-lg">
-          <h3 className="text-2xl font-bold mb-6 text-center">Comprehensive Compliance Coverage</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <Shield className="h-12 w-12 mb-4 text-emerald-500 mx-auto" />
-              <h4 className="font-semibold mb-2">Tax Compliance</h4>
-              <p className="text-gray-600">
-                Automatic tax calculations and filings for every jurisdiction, including VAT, income tax, and social contributions.
+
+        {/* Key Benefits Section */}
+        <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-amber-200/50">
+          <h3 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-amber-700 to-orange-600 bg-clip-text text-transparent">
+            Why Choose Fibo AI?
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Zap className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="font-bold mb-2 text-gray-800">70% Faster</h4>
+              <p className="text-gray-600 text-sm">
+                Save time on repetitive design tasks with intelligent automation
               </p>
             </div>
-            <div className="text-center">
-              <Shield className="h-12 w-12 mb-4 text-emerald-500 mx-auto" />
-              <h4 className="font-semibold mb-2">Labor Laws</h4>
-              <p className="text-gray-600">
-                Built-in compliance with local labor regulations, minimum wage requirements, and mandatory benefits.
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Sparkles className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="font-bold mb-2 text-gray-800">Professional Quality</h4>
+              <p className="text-gray-600 text-sm">
+                Mathematical precision ensures consistently excellent results
               </p>
             </div>
-            <div className="text-center">
-              <Shield className="h-12 w-12 mb-4 text-emerald-500 mx-auto" />
-              <h4 className="font-semibold mb-2">Data Protection</h4>
-              <p className="text-gray-600">
-                GDPR, CCPA, and local data protection standards compliance for secure payroll processing.
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Brain className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="font-bold mb-2 text-gray-800">Intuitive Interface</h4>
+              <p className="text-gray-600 text-sm">
+                No AI expertise required - simple tools for complex results
+              </p>
+            </div>
+            <div className="text-center group">
+              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <Layout className="h-6 w-6 text-white" />
+              </div>
+              <h4 className="font-bold mb-2 text-gray-800">Always Learning</h4>
+              <p className="text-gray-600 text-sm">
+                Algorithms continuously improve with each design interaction
               </p>
             </div>
           </div>
