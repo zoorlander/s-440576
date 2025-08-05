@@ -36,17 +36,7 @@
   body {
     @apply bg-background text-foreground font-['Inter'];
     font-feature-settings: "rlig" 1, "calt" 1;
-    /* FORCE RED BACKGROUND FOR TEST */
-    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 50%, #fca5a5 100%) !important;
   }
-}
-
-/* FORCE RED STYLES */
-h1 {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
 }
 
 /* Custom Fibo animations */
@@ -76,6 +66,11 @@ h1 {
   }
 }
 
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
@@ -92,6 +87,11 @@ h1 {
   animation: fade-up 1s ease-out;
 }
 
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease-in-out infinite;
+}
+
 .glass-card {
   @apply bg-white/90 backdrop-blur-lg border border-white/20 shadow-lg;
 }
@@ -100,14 +100,42 @@ h1 {
   @apply transition-transform duration-300 hover:scale-[1.02];
 }
 
-/* FORCE RED gradients */
+/* Beautiful golden gradients */
 .gradient-golden {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%) !important;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 50%, #b45309 100%);
 }
 
 .gradient-golden-text {
-  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%) !important;
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
+  background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #f59e0b 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced shadow effects */
+.shadow-golden {
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.25);
+}
+
+.shadow-golden-lg {
+  box-shadow: 0 10px 25px -3px rgba(245, 158, 11, 0.3), 0 4px 6px -2px rgba(245, 158, 11, 0.15);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #d97706, #b45309);
 }
